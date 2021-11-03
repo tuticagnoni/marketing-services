@@ -1,0 +1,365 @@
+:root {
+  --main-blue: #183459;
+  --second-blue: #c5c2e0;
+  --main-font: font-family: 'Montserrat', sans-serif;
+  --second-font: font-family: 'Playfair Display SC', serif;
+}
+
+* {
+  padding: 0;
+  margin: 0; 
+}
+
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Playfair Display SC', serif; */
+
+
+
+/* start header and main */
+header {
+  background-color: var(--main-blue);
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+main {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-family: var(--second-font);
+  font-size: 2.5vw;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 5px 5px rgba(0,0,0,.15);
+}
+main h2 {
+  text-transform: capitalize;
+  font-size: 2vw;
+  letter-spacing: 3px;
+  padding: 1%;
+}
+
+#video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* end header and main */
+
+/* start content section grid */
+/* .container3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+}
+
+.miami-image { 
+  grid-area: 1 / 1 / 4 / 4; 
+  width: 100%;
+  height: auto;
+}
+
+.super-title { 
+  grid-area: 1 / 4 / 4 / 7; 
+}
+
+.button { 
+  grid-area: 3 / 5 / 4 / 6; 
+}
+
+.super-title2 { 
+  grid-area: 4 / 1 / 7 / 4; 
+}
+
+.button2 { 
+  grid-area: 6 / 2 / 7 / 3; 
+}
+
+.miami-image2 { 
+  grid-area: 4 / 4 / 7 / 7; 
+  width: 50%;
+  height: auto;
+  
+} */
+
+.row {
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: 1fr 0.3fr;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.flip {
+  backface-visibility: hidden !important;
+  position: absolute;
+  transform-origin: 50% 50% 0px;
+  transition: all 3s;
+}
+#side-1 {
+  transform: rotateY( 0deg );
+}
+#side-2 {
+  transform: rotateY( 180deg );   
+}
+.flip-side-1 {    
+  transform: rotateY( 0deg ) !important;
+}
+.flip-side-2 {
+  transform: rotateY( 180deg ) !important;
+}
+/* .flip--left {
+  backface-visibility: hidden;
+  position: absolute;
+  transform-origin: 0% 50% 50px;
+  transition: all 3s;
+}
+#side-1--left {
+  transform: rotateY( 0deg );
+}
+#side-2--left {
+  transform: rotateY( 180deg );   
+}
+.flip--left-side-1--left {    
+  transform: rotateY( 0deg ) !important;
+}
+.flip-side-2 {
+  transform: rotateY( 180deg ) !important;
+} */
+
+
+
+
+img {
+  width: 100%;
+  /*prueba sombra*/
+border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
+box-shadow: 20px 20px rgba(0,0,0,.15);
+transition: all .4s ease;
+
+}
+
+img:hover {
+
+    border-radius: 0% 0% 0% 0% / 0% 0% 5% 5% ;
+    box-shadow: 10px 10px rgba(0,0,0,.25);
+
+}
+
+.large-text { 
+  /* background-color: var(--second-blue); */
+  padding: 1.5rem 1rem 1.5rem 1rem;
+  text-indent: 50px;
+  text-align: center;
+  letter-spacing: 1px;
+  line-height : 2rem;
+  font-size:1.5vw;
+  color: black; 
+}
+.border-text { 
+  border-top: 1px solid var(--main-blue);
+}
+.main-title {
+  font-family: var(--main-font);
+  font-size: 2.5vw;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--main-blue);
+  padding: 2rem;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  text-shadow: 2px 2px rgba(0,0,0,.15);
+}
+
+/*button*/
+.button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 2rem;
+  border-radius: 4px;
+  background-color: white;
+  border: solid var(--main-blue);
+  color: var(--main-blue);
+  text-align: center;
+  font-size: 22px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.4s;
+  cursor: pointer;
+  margin: 5px;
+}
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.4s;
+}
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover {
+  color: white;
+  border: none;
+  background: var(--main-blue);
+}
+.button:hover span {
+  padding-right: 25px;
+  
+}
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+  
+}
+
+.button--left {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 2rem;
+  border-radius: 4px;
+  background-color: white;
+  border: solid var(--main-blue);
+  color: var(--main-blue);
+  text-align: center;
+  font-size: 22px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.4s;
+  cursor: pointer;
+  margin: 5px;
+}
+.button--left span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.4s;
+}
+.button--left span:after {
+  content: "\00ab" ;
+  position: absolute;
+  color:withe;
+  opacity: 0;
+  top: 0;
+  left: -150px;
+  transition: 0.5s;
+}
+
+.button--left:hover {
+  color: white;
+  border: none;
+  background: var(--main-blue);
+}
+.button--left:hover span {
+  padding-left: 25px;
+  
+}
+.button--left:hover span:after {
+  opacity: 1;
+  right: 0;
+  
+} 
+/*end button*/
+
+
+
+
+
+.center-aligned {
+  display: box;
+  display: flex;
+  box-align: center;
+  align-items: center;
+  box-pack: center;
+  justify-content: center;
+  padding:0.5vw ;
+}
+
+.background-image {
+  position: relative;
+ 
+
+}
+
+.title-banner {
+  position: absolute;
+  font-family: var(--main-font);
+  font-weight: bold;
+  font-size: 2.5vw;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--main-blue);
+  text-align: center;
+  text-shadow: 2px 2px rgba(0,0,0,.15);
+}
+
+.text-container{
+  padding: 1.5rem 3rem 1.5rem 3rem;
+  text-indent: 50px;
+  text-align: center;
+  letter-spacing: 1px;
+  line-height : 2rem;
+  font-size:1.5vw;
+  color: black; 
+  border-bottom: 1px solid var(--main-blue);
+}
+
+
+
+@media (max-width: 800px) {
+  .row {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5fr 5fr;
+    }
+    .flip {
+  
+      padding-bottom: 70%;
+    }
+    .img2 {
+      padding-top: 60%;
+    }
+}
+
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "banner banner ."
+    ". text text"
+    ". text text";
+}
+
+.banner { grid-area: banner; }
+
+.text { grid-area: text; }
+
+
