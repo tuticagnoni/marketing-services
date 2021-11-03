@@ -1,4 +1,4 @@
-//first button
+// button first section
 document.getElementById("button").addEventListener(
   "click",
   function (event) {
